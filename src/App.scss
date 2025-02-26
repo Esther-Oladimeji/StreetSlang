@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&family=Poppins:wght@400;600&display=swap');
+$dark-blue: #26293C;
+$yellow: #F6B352;
+$black: #1F2124;
+$light-blue: #30344C;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(99.61deg, lighten($dark-blue, 1%) 4.26%, darken($dark-blue, 4%) 84.84%);
+  margin: 0 !important;
+  padding: 0 !important; // Ensure no padding
+  overflow-x: hidden; 
+}
+
+.App {
+  margin: auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: white !important;
+  overflow: hidden;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; // Align to the top
+  width: 100%; // Full width
+  margin: 5px auto;
+  position: absolute; // Position it absolutely
+  top: 0; // Stick to the top
+  left: 0; // Align to the left edge
+  right: 0; // Align to the right edge
+  z-index: 10; // Ensure it's above other elements
+}
+
+.logo {
+  width: 150px; // Adjust the size as needed
+  height: auto; // Maintain aspect ratio
+  margin-top: 15px; // Add some space from the top
+}
+  
+  .logo img {
+      margin-left: 25%;
+      margin-right: 25%;
+      z-index:1;
+      background:grey;
+      clear:both;
+      position:absolute;
+      left:0;
+      right:0;
+      margin-top:-2%;
+  }
+
+.text-part {
+  background-color: lighten($dark-blue, 2%);
+  padding: 40px;
+  border-radius: 10px;
+  height: 300px;
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-part .buttons {
+  margin-top: auto; 
+  width: 100%;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.button {
+  padding: 12px 20px !important; // Slightly larger padding
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px; // Rounded corners
+  margin: 10px auto;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: white !important;
+  transition: all 0.3s ease; // Smooth transition
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); // Subtle shadow
+}
+
+.mandarin-button {
+  background-color: $black !important; // Black background
+  border-color: white !important; // White border
+  color: white !important; // White text
+}
+
+.yoruba-button {
+  background-color: white !important; // White background
+  border-color: $black !important; // Black border
+  color: $black !important; // Black text
+}
+
+.igbo-button {
+  background-color: $yellow !important; // Muted gold background
+  border-color: $black !important; // Black border
+  color: $black !important; // Black text
+}
+
+.button:hover {
+  transform: translateY(-2px); // Slight lift on hover
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); // Larger shadow on hover
+}
+
+.button:active {
+  transform: translateY(0); // Reset lift on click
+}
+
+.card-wrapper {
+  text-align: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 600px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: lighten($light-blue, 7%) !important;
+  z-index: 5;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  animation: popUp 1s ease-out forwards;
+  padding: 20px;
+
+  &.fade-out {
+    animation: fadeOut 0.8s ease-out forwards; // Apply fade-out animation
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px // Ensure text is centered
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+  padding: 10px 0 0 !important;
+}
+
+.generate-btn {
+  margin: 0 auto !important;
+  background: rgba($black, 0.8) !important; // Black with lower opacity
+  border: 2px solid transparent; 
+  border-radius: 50px !important;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
+  width: 100% !important; // Full width
+  align-self: center !important;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(208, 203, 203) !important;
+  cursor: pointer;
+  text-transform: capitalize !important;
+  padding: 8px 0 !important;
+  &:hover {
+    background: rgba($black, 0.9) !important; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.close-btn {
+  margin: 0 auto !important;
+  background: transparent !important; 
+  border: 2px solid $yellow !important; 
+  border-radius: 50px !important; 
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 100% !important; 
+  align-self: center !important;
+  font-family: 'Poppins', sans-serif;
+  color: $yellow !important; 
+  cursor: pointer;
+  text-transform: capitalize !important;
+  
+  &:hover {
+    background: rgba($yellow, 0.1) !important; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.card-header {
+  font-size: 24px !important; 
+  color: $yellow !important; 
+  margin-bottom: 20px !important;
+}
+
+.slang-text {
+  font-size: 22px !important;
+  color: white !important;
+  margin: 15px 0 !important;
+  line-height: 1.3;
+}
+
+.translation-text {
+  font-size: 18px !important;
+  color: rgba(216, 203, 203, 0.722) !important;
+  margin: 0 auto !important;
+  max-width: 90%; 
+}
+
+button:disabled {
+  background-color: #c0c0c0 !important;
+  cursor: not-allowed !important;
+}
+
+button:disabled:hover {
+  opacity: 1;
+}
+
+.card-actions {
+  gap: 0px;
+}
+
+.yellow{
+  color:$yellow;
+}
+
+@media (max-width: 768px) {
+  .text-part {
+    padding: 20px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .button {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .card-wrapper {
+    width: 300px;
+    height: 280px;
+  }
+
+  
+
+  .generate-btn {
+    width: 90% !important; 
+  }
+
+  .close-btn {
+    width: 90% !important; 
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .buttons {
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center; 
+  }
+
+  .button {
+    font-size: 14px;
+    width: 100% !important; 
+  }
+
+  
+
+  .text-part {
+    margin: 0 10px;
+    height: 350px;
+    width: 310px;
+  }
+
+  .card-wrapper {
+    height: 320px;
+    width: 310px;
+  }
+}
+
+@media (min-height: 1000px) {
+  .text-part {
+    height: 400px;
+  }
+  .card-wrapper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 360px) {
+  .text-part {
+    width: 250px !important;
+  }
+  .card-wrapper {
+    width: 230px !important;
+  }
+}
+
+@media (max-width: 325px) {
+  .text-part {
+    width: 210px !important;
+  }
+  .card-wrapper {
+    width: 200px !important;
+  }
+}
+
+@media (min-width: 750px) {
+  .text-part {
+    width: 400px !important;
+  }
+  .card-wrapper {
+    width: 400px !important;
+  }
+  .generate-btn {
+    width: 85% !important; 
+  }
+
+  .close-btn {
+    width: 85% !important; 
+  }
+  .logo {
+    width: 180px; // Adjust the size as needed
+    height: auto; // Maintain aspect ratio
+  }
+}
+
+@media (min-width: 900px) {
+  .text-part {
+    width: 450px !important;
+  }
+  .card-wrapper {
+    width: 450px !important;
+  }
+  .generate-btn {
+    width: 80% !important; 
+  }
+
+  .close-btn {
+    width: 80% !important; 
+  }
+}
+@media (max-height: 750px){
+.logo {
+  margin-top: 6px; // Add some space from the top
+}
+}
+
