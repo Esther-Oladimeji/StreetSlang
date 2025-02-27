@@ -8,8 +8,8 @@ function App() {
   const [translation, setTranslation] = useState('');
   const [isCardVisible, setIsCardVisible] = useState(false);
   const [dynamicMessage, setDynamicMessage] = useState('');
-  const [generateCount, setGenerateCount] = useState(0); // Track number of additional generations
-  const [buttonsDisabled, setButtonsDisabled] = useState(false); // Track if buttons are disabled
+  const [generateCount, setGenerateCount] = useState(0);
+  const [buttonsDisabled, setButtonsDisabled] = useState(false); 
 
   const getSlang = async () => {
     try {
@@ -27,14 +27,14 @@ function App() {
 
   const handleGenerateAgain = () => {
     getSlang();
-    setGenerateCount((prevCount) => prevCount + 1); // Increment generate count
+    setGenerateCount((prevCount) => prevCount + 1); 
   };
 
   const closeModal = () => {
     setIsCardVisible(false);
     if (generateCount >= 4) {
-      setButtonsDisabled(true); // Disable buttons after 2 additional generations
-      setDynamicMessage('Oya, make we hear word. Abeg come back tomorrow!'); // Goodbye message
+      setButtonsDisabled(true); 
+      setDynamicMessage('Oya, make we hear word. Abeg come back tomorrow!'); 
     } else {
       setDynamicMessage('Nawa o! You tink sey u don sabi, oya try again');
     }
@@ -52,16 +52,6 @@ function App() {
           {!dynamicMessage && <h1>Which Confam Slang u wan learn today?</h1>}
           {dynamicMessage && <h1 className='yellow'>{dynamicMessage}</h1>}
           <div className='buttons'>
-            <button
-              onClick={() => {
-                setLanguage('Mandarin');
-                getSlang();
-              }}
-              className="button mandarin-button"
-              disabled={buttonsDisabled} 
-            >
-              Mandarin
-            </button>
             <button
               onClick={() => {
                 setLanguage('Yoruba');
@@ -82,6 +72,16 @@ function App() {
               disabled={buttonsDisabled} 
             >
               Igbo
+            </button>
+            <button
+              onClick={() => {
+                setLanguage('Mandarin');
+                getSlang();
+              }}
+              className="button mandarin-button"
+              disabled={buttonsDisabled} 
+            >
+              Mandarin                                                                                                                                                                                   
             </button>
           </div>
         </div>
@@ -111,7 +111,7 @@ function App() {
                   Oya Next!
                 </Button>
               )}
-              {generateCount >= 4 && ( // Show message after 2 additional generations
+              {generateCount >= 4 && ( 
                 <Typography variant="h6" sx={{ color: 'white' }}>
                   Oga, you too like slang o! Oya come back tomorrow.
                 </Typography>
