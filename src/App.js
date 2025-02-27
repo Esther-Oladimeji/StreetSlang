@@ -98,7 +98,7 @@ function App() {
                 {slangOfTheDay}
               </Typography>
               <Typography variant="h6" className='translation-text'>
-                <span>Wetin it mean: </span>{translation}
+                {translation}
               </Typography>
             </CardContent>
             <CardActions className="card-actions">

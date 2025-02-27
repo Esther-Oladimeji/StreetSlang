@@ -248,13 +248,15 @@ h1 {
   color: white !important;
   margin: 15px 0 !important;
   line-height: 1.3;
+  font-weight: 700;
 }
 
 .translation-text {
   font-size: 18px !important;
-  color: rgba(216, 203, 203, 0.722) !important;
+  color: rgba(216, 203, 203, 0.788) !important;
   margin: 0 auto !important;
   max-width: 90%; 
+  font-style: italic;
 }
 
 button:disabled {
